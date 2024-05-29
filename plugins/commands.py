@@ -116,8 +116,6 @@ async def start(client, message):
             ]]
             await message.reply("You not verified today! Kindly verify now. 🔐", reply_markup=InlineKeyboardMarkup(btn), protect_content=True)
             return
-    else:
-        pass
 
     settings = await get_settings(int(mc.split("_", 2)[1]))
     if not await db.has_premium_access(message.from_user.id):
